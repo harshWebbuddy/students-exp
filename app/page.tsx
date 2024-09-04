@@ -1,5 +1,6 @@
+"use client";
 import React, { useEffect } from "react";
-
+import Promisepizza from './components/Promisepizza';
 type Student = {
   name: string;
   experience: number;
@@ -34,19 +35,37 @@ const Page = () => {
   // };
 
   // Use useEffect to manage the side effect
-  useEffect(() => {
-    function getCheese(callback: (cheese: string) => void) {
-      setTimeout(() => {
-        const cheese = "cheese";
-        console.log("Here is cheese:", cheese);
-        callback(cheese);
-      }, 2000);
-    }
 
-    getCheese((cheese) => {
-      console.log("got the cheese", cheese);
-    });
-  }, []); // Empty dependency array means it runs once after the initial render
+  // function getCheese(callback: (cheese: string) => void) {
+  //   setTimeout(() => {
+  //     const cheese = "cheese";
+  //     console.log("Here is cheese:", cheese);
+  //     callback(cheese);
+  //   }, 2000);
+  // }
+  // function makeDough(cheese: string, callback: (cheese: string) => void) {
+  //   setTimeout(() => {
+  //     const dough = "dough";
+  //     console.log("Here is dough:", dough);
+  //     callback(dough);
+  //   }, 2000);
+  // }
+  // function bakePizza(dough: string, callback: (cheese: string) => void) {
+  //   setTimeout(() => {
+  //     const pizzza = "pizzza";
+  //     console.log("Here is pizza:", pizzza);
+  //     callback(pizzza);
+  //   }, 2000);
+  // }
+  // getCheese((cheese) => {
+  //   makeDough(cheese, (dough) => {
+  //     bakePizza(dough, (pizza) => {
+  //       console.log("got the pizza", pizza);
+  //     });
+  //   });
+  // });
+  
+  // Empty dependency array means it runs once after the initial render
 
   // const categorizedStudents = categorizeByExperience(students);
 
@@ -54,6 +73,7 @@ const Page = () => {
 
   return (
     <div>
+      <Promisepizza/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
