@@ -1,44 +1,61 @@
-import React from 'react'
+import React, { useEffect } from "react";
+
 type Student = {
   name: string;
   experience: number;
 };
-const page = () => {
-  const students: Student[] 
-    = [
-    { "name": "John Doe", "experience": 1 },
-    { "name": "Jane Smith", "experience": 2 },
-    { "name": "Alice Johnson", "experience": 4 },
-    { "name": "Bob Brown", "experience": 3 },
-    { "name": "Charlie Davis", "experience": 2 },
-    { "name": "Eva Green", "experience": 1 },
-    { "name": "Frank White", "experience": 4 },
-    { "name": "Grace Black", "experience": 3 },
-    { "name": "Hannah Wilson", "experience": 2 },
-    { "name": "Ivy King", "experience": 1 }
-  ];
- 
-  const categorizeByExperience = (students: Student[]) => {
-    const categories: Record<number, string[]> = {};
 
-    students.forEach((student: Student) => {
-      const exp = student.experience;
-    if (!categories[exp]) {
-      categories[exp] = [];
+const Page = () => {
+  // const students: Student[] = [
+  //   { name: "John Doe", experience: 1 },
+  //   { name: "Jane Smith", experience: 2 },
+  //   { name: "Alice Johnson", experience: 4 },
+  //   { name: "Bob Brown", experience: 3 },
+  //   { name: "Charlie Davis", experience: 2 },
+  //   { name: "Eva Green", experience: 1 },
+  //   { name: "Frank White", experience: 4 },
+  //   { name: "Grace Black", experience: 3 },
+  //   { name: "Hannah Wilson", experience: 2 },
+  //   { name: "Ivy King", experience: 1 }
+  // ];
+
+  // const categorizeByExperience = (students: Student[]) => {
+  //   const categories: Record<number, string[]> = {};
+
+  //   students.forEach((student: Student) => {
+  //     const exp = student.experience;
+  //     if (!categories[exp]) {
+  //       categories[exp] = [];
+  //     }
+  //     categories[exp].push(student.name);
+  //   });
+
+  //   return categories;
+  // };
+
+  // Use useEffect to manage the side effect
+  useEffect(() => {
+    function getCheese(callback: (cheese: string) => void) {
+      setTimeout(() => {
+        const cheese = "cheese";
+        console.log("Here is cheese:", cheese);
+        callback(cheese);
+      }, 2000);
     }
-    categories[exp].push(student.name);
-  });
 
-  return categories;
-};
+    getCheese((cheese) => {
+      console.log("got the cheese", cheese);
+    });
+  }, []); // Empty dependency array means it runs once after the initial render
 
-const categorizedStudents = categorizeByExperience(students);
+  // const categorizedStudents = categorizeByExperience(students);
 
-console.log(categorizedStudents);
+  // console.log(categorizedStudents);
+
   return (
     <div>
-      <h1>Categorized Students by Experience</h1>
-      {Object.keys(categorizedStudents).map((experience) => (
+      {/* <h1>Categorized Students by Experience</h1> */}
+      {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
           <h2>Experience: {experience} year(s)</h2>
           <ul>
@@ -47,9 +64,9 @@ console.log(categorizedStudents);
             ))}
           </ul>
         </div>
-      ))}
+      ))} */}
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Page;
