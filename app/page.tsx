@@ -5,8 +5,113 @@ type Student = {
   name: string;
   experience: number;
 };
-
 const Page = () => {
+function chunk(arr:number[],size:number){
+let result: number[][] = [];
+let minians: number[] = []; 
+for(let i=0;i<arr.length;i++){
+minians.push(arr[i]);
+if(minians.length===size || i===arr.length-1)
+ {
+  result.push([...minians]);
+  minians.length=0;
+ }
+
+}
+ console.log("result",result);
+ return result;
+}
+
+ console.log("result",chunk([1,2,3,4,5],3));
+
+  ///factorial
+  // const inputnum = parseInt(prompt("Please enter a number") || "0"); // Parsing input as a number
+//  if(inputnum<=0){
+//   console.log(`factorila of ${inputnum} is not possible`);
+// }
+// const inputnum = parseInt(prompt("Please enter a number") || "0"); // Parsing input as a number
+//   let fact=1;
+// if(inputnum<=0){
+//   console.log(`factorila of ${inputnum} is not possible`);
+// }
+// else{
+// for(let i=1;i<inputnum;i++){
+//   fact=fact*i;
+// }
+// console.log(`factorial no if ${inputnum} is ${fact}`)
+// }
+
+/////sum
+  // const arrnumber = [ 1, 2, 3, 4];
+  // const sumofnumber=(arr:number[])=>{
+  //   return arr.reduce((pre,curr)=>{
+  //     return pre+curr
+  //   })
+  // }
+  // console.log(sumofnumber(arrnumber))
+
+
+  // const duplicates = arrnumber.filter((ele, index, arr) => arr.indexOf(ele) !== index);
+  // console.log(arrnumber.filter((item,index)=>arrnumber.indexOf(item)===index));
+  // console.log('Duplicates:', duplicates);
+
+  //max/mini
+  // const maxfunction = (arr: number[]): number => {
+  // return arr.reduce((prev,curr)=>{
+  //   return prev>curr?prev:curr
+  // })
+  //   };
+  //   const minifunction = (arr: number[]): number => {
+  // return arr.reduce((prev,curr)=>{
+  //   return prev<curr?prev:curr
+  // })
+  //   };
+  // console.log(arrnumber.reduce((prev,curr)=>{
+  //   return prev>curr?prev:curr
+  // }));
+
+  //second largest value
+
+  // const largestvalue= (arr: number[]): number=>{
+  //   let firstlargestvalue=Math.max(...arr)
+  //   let index=arr.indexOf(firstlargestvalue)
+  //   arr.splice(index,1);
+  //   let secondlargestvalue=Math.max(...arr)
+  //   return(secondlargestvalue);
+  // }
+  // console.log(largestvalue(arrnumber));
+
+
+  // find/filter
+
+  // const found=arrnumber.filter((item)=>{
+  //   return item>1;
+  // })
+  // console.log(found);
+
+
+  ///missing number
+
+  // const missing = (arr: number[]) => {
+  //   const missarray = [];
+  //   let maxie = Math.max(...arr);
+  //   let minie = Math.min(...arr);
+  //   for (let i = minie; i < maxie; i++) {
+  //     if (arr.indexOf(i) < 0) {
+  //       missarray.push(i);
+  //     }
+  //   }
+  //   return (missarray);
+  // }
+  // console.log(missing(arrnumber));
+
+  // even /odd no
+
+  // console.log(arrnumber.filter((item)=>{
+  //   return item%2!==0;
+  // }))
+
+
   // const students: Student[] = [
   //   { name: "John Doe", experience: 1 },
   //   { name: "Jane Smith", experience: 2 },
@@ -64,7 +169,7 @@ const Page = () => {
   //     });
   //   });
   // });
-  
+
   // Empty dependency array means it runs once after the initial render
 
   // const categorizedStudents = categorizeByExperience(students);
@@ -73,7 +178,7 @@ const Page = () => {
 
   return (
     <div>
-      <Promisepizza/>
+      <Promisepizza />
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
