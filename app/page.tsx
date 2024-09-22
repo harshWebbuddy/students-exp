@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Promisepizza from './components/Promisepizza';
+import Task from "./components/Task";
 type Student = {
   name: string;
   experience: number;
@@ -178,7 +179,8 @@ if(minians.length===size || i===arr.length-1)
 
   return (
     <div>
-      <Promisepizza />
+      {/* <Promisepizza /> */}
+      <Task/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
