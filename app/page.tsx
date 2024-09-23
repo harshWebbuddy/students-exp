@@ -7,23 +7,23 @@ type Student = {
   experience: number;
 };
 const Page = () => {
-function chunk(arr:number[],size:number){
-let result: number[][] = [];
-let minians: number[] = []; 
-for(let i=0;i<arr.length;i++){
-minians.push(arr[i]);
-if(minians.length===size || i===arr.length-1)
- {
-  result.push([...minians]);
-  minians.length=0;
- }
+// function chunk(arr:number[],size:number){
+// let result: number[][] = [];
+// let minians: number[] = []; 
+// for(let i=0;i<arr.length;i++){
+// minians.push(arr[i]);
+// if(minians.length===size || i===arr.length-1)
+//  {
+//   result.push([...minians]);
+//   minians.length=0;
+//  }
 
-}
- console.log("result",result);
- return result;
-}
+// }
+//  console.log("result",result);
+//  return result;
+// }
 
- console.log("result",chunk([1,2,3,4,5],3));
+//  console.log("result",chunk([1,2,3,4,5],3));
 
   ///factorial
   // const inputnum = parseInt(prompt("Please enter a number") || "0"); // Parsing input as a number
