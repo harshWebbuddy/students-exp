@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import Promisepizza from './components/Promisepizza';
 import Task from "./components/Task";
+import Pagination from "./components/Pagination";
 type Student = {
   name: string;
   experience: number;
@@ -180,7 +181,8 @@ const Page = () => {
   return (
     <div>
       {/* <Promisepizza /> */}
-      <Task/>
+      {/* <Task/> */}
+      <Pagination num_of_pages={25} active_page={2} pagelimit={10}/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
