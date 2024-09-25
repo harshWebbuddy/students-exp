@@ -48,6 +48,7 @@ const Pagination: React.FC<PaginationProps> = ({
             }`}
          onClick={()=>Pageclickhandler(index+1)} >
             {index + 1}
+            
           </span>
         );
       })}
