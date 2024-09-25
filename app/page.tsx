@@ -4,6 +4,7 @@ import Promisepizza from './components/Promisepizza';
 import Task from "./components/Task";
 import Pagination from "./components/Pagination";
 import ValidParenthesis from "./components/ValidParenthesis";
+import Questions from "./components/Questions";
 type Student = {
   name: string;
   experience: number;
@@ -184,7 +185,8 @@ const Page = () => {
       {/* <Promisepizza /> */}
       {/* <Task/> */}
       {/* <Pagination num_of_pages={25} active_page={2} pagelimit={10}/> */}
-      <ValidParenthesis/>
+      {/* <ValidParenthesis/> */}
+<Questions/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
