@@ -5,6 +5,7 @@ import Task from "./components/Task";
 import Pagination from "./components/Pagination";
 import ValidParenthesis from "./components/ValidParenthesis";
 import Questions from "./components/Questions";
+import Apishow from "./components/Apishow";
 type Student = {
   name: string;
   experience: number;
@@ -186,7 +187,9 @@ const Page = () => {
       {/* <Task/> */}
       {/* <Pagination num_of_pages={25} active_page={2} pagelimit={10}/> */}
       {/* <ValidParenthesis/> */}
-<Questions/>
+{/* <Questions/> */}
+     <Apishow/>
+     
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
