@@ -21,15 +21,14 @@ const Apishow = () => {
     if (task) {
       const newdata = {
         completed: false,
-        id: Todos.length + 1, // Ensure a unique id for new task
+        id: Todos.length + 1, 
         todo: task,
       };
 
-      // Add the new task to the Todos array
       settodos([newdata, ...Todos]);
 
-      // Clear the input field after adding a new task
-    //   reffered.current.value = "";
+    
+      if (reffered.current) reffered.current.value = "";
     }
   };
   return (
