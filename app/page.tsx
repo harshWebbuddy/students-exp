@@ -6,6 +6,7 @@ import Pagination from "./components/Pagination";
 import ValidParenthesis from "./components/ValidParenthesis";
 import Questions from "./components/Questions";
 import Apishow from "./components/Apishow";
+import CategoryTask from "./components/CategoryTask";
 type Student = {
   name: string;
   experience: number;
@@ -188,8 +189,8 @@ const Page = () => {
       {/* <Pagination num_of_pages={25} active_page={2} pagelimit={10}/> */}
       {/* <ValidParenthesis/> */}
 {/* <Questions/> */}
-     <Apishow/>
-     
+     {/* <Apishow/>  incomplete  */}
+     <CategoryTask/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
