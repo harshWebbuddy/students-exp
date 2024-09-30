@@ -3,13 +3,14 @@ type CategoryKey = 'newtask' | 'inprogress' | 'inreview' | 'completed';
 const CategoryTask = () => {
     const [Taskdescription, setTaskdescription] = useState('');
     const [selectedcategory, setselectedcategory] = useState<CategoryKey>("newtask");
+        const [previousCategory, setPreviousCategory] = useState<CategoryKey | null>(null); 
     const [category, setcategory] = useState<Record<CategoryKey, string[]>>({
         "newtask": [],
         "inprogress": [],
         "inreview": [],
         "completed": []
     })
-    const [Edit,setEdit]=useState<number|null>();
+    const [Edit,setEdit]=useState<number|null>(null);
     const handleAddtask = () => {
         if (Taskdescription) {
             const updatedcategory = { ...category };
@@ -30,28 +31,35 @@ const CategoryTask = () => {
       const handleUpdatetask = (index: number) => {
 
         const updatedcategory = { ...category };
-        updatedcategory[selectedcategory][index]=Taskdescription;
-        setTaskdescription("");
+        if(previousCategory && previousCategory!=selectedcategory)
+        {
+            updatedcategory[previousCategory].splice(index,1);
+        }
+        
+                   updatedcategory[selectedcategory].push(Taskdescription);
+
+       
         console.log(updatedcategory);
         setcategory(updatedcategory);
+        setPreviousCategory(null)
         setEdit(null)
+         setTaskdescription("");
 
     }
     const handleEdittask = (index: number) => {
+        
          setEdit(index);
          setTaskdescription(category[selectedcategory][index]);
-
-       
-
+         setPreviousCategory(selectedcategory)
     }
     const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setselectedcategory(e.target.value as CategoryKey);
     };
 
     return (
-        <div> <div>
-            <input type="text" placeholder='enter the item' value={Taskdescription} onChange={(e) => setTaskdescription(e.target.value)} className='border ' />
-            <select className='border' onChange={handleCategoryChange} value={selectedcategory}>
+        <div className='bg-black text-white w-full h-full  '> <div>
+            <input type="text" placeholder='enter the item' value={Taskdescription} onChange={(e) => setTaskdescription(e.target.value)} className='border  bg-black' />
+            <select className='border bg-black '  onChange={handleCategoryChange} value={selectedcategory}>
                 <option selected={true} value="newtask">New Task</option>
                 <option value="inprogress">In Progress</option>
                 <option value="inreview">In Review</option>

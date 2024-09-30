@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import Promisepizza from './components/Promisepizza';
 import Task from "./components/Task";
-import Pagination from "./components/Pagination";
+// import Pagination from "./components/Pagination";
 import ValidParenthesis from "./components/ValidParenthesis";
 import Questions from "./components/Questions";
 import Apishow from "./components/Apishow";
@@ -183,7 +183,7 @@ const Page = () => {
   // console.log(categorizedStudents);
 
   return (
-    <div>
+    <div className="bg-black h-full">
       {/* <Promisepizza /> */}
       {/* <Task/> */}
       {/* <Pagination num_of_pages={25} active_page={2} pagelimit={10}/> */}
