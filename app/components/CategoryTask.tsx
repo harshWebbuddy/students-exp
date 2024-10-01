@@ -34,11 +34,14 @@ const CategoryTask = () => {
         if(previousCategory && previousCategory!=selectedcategory)
         {
             updatedcategory[previousCategory].splice(index,1);
-        }
-        
-                   updatedcategory[selectedcategory].push(Taskdescription);
 
-       
+        }
+        else{
+            updatedcategory[selectedcategory].splice(index,1);
+
+        }
+        updatedcategory[selectedcategory].push(Taskdescription); 
+
         console.log(updatedcategory);
         setcategory(updatedcategory);
         setPreviousCategory(null)
