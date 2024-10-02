@@ -7,6 +7,7 @@ import ValidParenthesis from "./components/ValidParenthesis";
 import Questions from "./components/Questions";
 import Apishow from "./components/Apishow";
 import CategoryTask from "./components/CategoryTask";
+import Light from "./components/Light";
 type Student = {
   name: string;
   experience: number;
@@ -190,7 +191,8 @@ const Page = () => {
       {/* <ValidParenthesis/> */}
 {/* <Questions/> */}
      {/* <Apishow/>  incomplete  */}
-     <CategoryTask/>
+     {/* <CategoryTask/> */}
+     <Light/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
