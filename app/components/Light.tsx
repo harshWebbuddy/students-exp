@@ -116,3 +116,140 @@ const Light = () => {
 };
 
 export default Light;
+// import React, { useEffect, useState } from "react";
+
+// // Define a Node structure for the circular linked list
+// class LightNode {
+//   constructor(
+//     public color: string,
+//     public duration: number,
+//     public next: LightNode | null = null
+//   ) {}
+// }
+
+// const Light = () => {
+//   const [manualmode, setmanualmode] = useState(false);
+//   const [inputValue, setInputValue] = useState(""); // For managing the input field
+//   const [timer, setTimer] = useState<number>(10); // Timer state
+//   const [currentNode, setCurrentNode] = useState<LightNode | null>(null); // Current light
+
+//   // Initialize the circular linked list
+//   useEffect(() => {
+//     const greenNode = new LightNode("green", 10);
+//     const yellowNode = new LightNode("yellow", 5);
+//     const redNode = new LightNode("red", 15);
+
+//     // Link them in a circular manner
+//     greenNode.next = yellowNode;
+//     yellowNode.next = redNode;
+//     redNode.next = greenNode;
+
+//     // Set the initial current node to green
+//     setCurrentNode(greenNode);
+//     setTimer(greenNode.duration);
+//   }, []);
+
+//   useEffect(() => {
+//     let interval: string | number | NodeJS.Timeout | undefined;
+//     if (!manualmode && currentNode) {
+//       interval = setInterval(() => {
+//         setTimer((prevTimer) => {
+//           if (prevTimer > 0) {
+//             return prevTimer - 1;
+//           } else {
+//             // Move to the next light in the circular linked list
+//             const nextNode = currentNode.next;
+//             if (nextNode) {
+//               setCurrentNode(nextNode);
+//               return nextNode.duration;
+//             }
+//             return prevTimer;
+//           }
+//         });
+//       }, 1000);
+//     }
+//     return () => clearInterval(interval);
+//   }, [currentNode, manualmode]);
+
+//   // Manual mode light change
+//   const handleManualLightChange = (color: string) => {
+//     setmanualmode(true);
+//     if (currentNode) {
+//       let current = currentNode;
+//       // Find the node matching the selected color
+//       while (current.color !== color && current.next) {
+//         current = current.next;
+//       }
+//       setCurrentNode(current);
+//       setTimer(current.duration);
+//     }
+//   };
+
+//   // Increase timer logic
+//   const handleIncreaseTimer = (second: number) => {
+//     if (currentNode) {
+//       currentNode.duration += second;
+//       setTimer(currentNode.duration);
+//     }
+//   };
+
+//   // Reset to automatic mode and green light
+//   const handleoffmode = () => {
+//     setmanualmode(false);
+//     setInputValue(""); // Clear the input
+//     if (currentNode) {
+//       let current = currentNode;
+//       // Find green light to reset
+//       while (current.color !== "green" && current.next) {
+//         current = current.next;
+//       }
+//       setCurrentNode(current);
+//       setTimer(current.duration);
+//     }
+//   };
+
+//   return (
+//     <div className="text-white flex flex-col gap-y-6">
+//       <button onClick={handleoffmode}>OFF</button>
+//       <button className="" onClick={() => handleManualLightChange("red")}>
+//         RedManualMode
+//       </button>
+//       <button className="" onClick={() => handleManualLightChange("yellow")}>
+//         YellowManualMode
+//       </button>
+//       <button className="" onClick={() => handleManualLightChange("green")}>
+//         GreenManualMode
+//       </button>
+
+//       <label>Increase Timer</label>
+//       <input
+//         value={inputValue}
+//         placeholder="if you want to increase timer"
+//         onChange={(e) => setInputValue(e.target.value)} // Update input value
+//         onBlur={() => handleIncreaseTimer(Number(inputValue))} // Update timer on blur
+//         className="text-black"
+//       />
+
+//       <div>Time remaining: {timer}s</div> {/* Display remaining time */}
+
+//       {/* Display light based on the current color */}
+//       <div
+//         className={`w-20 h-20 rounded-full ${
+//           currentNode?.color === "red" ? "bg-red-600" : "bg-white"
+//         }`}
+//       ></div>
+//       <div
+//         className={`w-20 h-20 rounded-full ${
+//           currentNode?.color === "yellow" ? "bg-yellow-600" : "bg-white"
+//         }`}
+//       ></div>
+//       <div
+//         className={`w-20 h-20 rounded-full ${
+//           currentNode?.color === "green" ? "bg-green-600" : "bg-white"
+//         }`}
+//       ></div>
+//     </div>
+//   );
+// };
+
+// export default Light;
