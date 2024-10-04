@@ -8,6 +8,8 @@ import Questions from "./components/Questions";
 import Apishow from "./components/Apishow";
 import CategoryTask from "./components/CategoryTask";
 import Light from "./components/Light";
+import Hooks from "./components/Hooks";
+import Redux from "./components/Redux";
 type Student = {
   name: string;
   experience: number;
@@ -184,7 +186,7 @@ const Page = () => {
   // console.log(categorizedStudents);
 
   return (
-    <div className="bg-black h-full">
+    <div className="bg-black text-white h-full">
       {/* <Promisepizza /> */}
       {/* <Task/> */}
       {/* <Pagination num_of_pages={25} active_page={2} pagelimit={10}/> */}
@@ -192,7 +194,9 @@ const Page = () => {
 {/* <Questions/> */}
      {/* <Apishow/>  incomplete  */}
      {/* <CategoryTask/> */}
-     <Light/>
+     {/* 0<Light/> */}
+     {/* <Hooks/> */}
+   <Redux/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>

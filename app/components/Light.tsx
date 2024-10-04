@@ -239,14 +239,14 @@ export default Light;
 //         }`}
 //       ></div>
 //       <div
-//         className={`w-20 h-20 rounded-full ${
+//         className={`w-20 h-20 rounded-full ${  
 //           currentNode?.color === "yellow" ? "bg-yellow-600" : "bg-white"
 //         }`}
 //       ></div>
 //       <div
 //         className={`w-20 h-20 rounded-full ${
 //           currentNode?.color === "green" ? "bg-green-600" : "bg-white"
-//         }`}
+ //         }`}
 //       ></div>
 //     </div>
 //   );
