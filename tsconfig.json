@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/features/counter/counterSlice.tsx", "app/components/reduxStore/Provider.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/features/counter/counterSlice.tsx", "app/components/reduxStore/Provider.tsx"],
   "exclude": ["node_modules"]
 }
