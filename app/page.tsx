@@ -10,6 +10,8 @@ import CategoryTask from "./components/CategoryTask";
 import Light from "./components/Light";
 import Hooks from "./components/Hooks";
 import Redux from "./components/Redux";
+import UseContext from "./components/useContext";
+import UseContext2 from "./components/useContext";
 type Student = {
   name: string;
   experience: number;
@@ -196,7 +198,8 @@ const Page = () => {
      {/* <CategoryTask/> */}
      {/* 0<Light/> */}
      {/* <Hooks/> */}
-   <Redux/>
+   {/* <Redux/> */}
+   <UseContext2/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
