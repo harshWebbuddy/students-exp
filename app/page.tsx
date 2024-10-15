@@ -202,10 +202,7 @@ const Page = () => {
      {/* 0<Light/> */}
      {/* <Hooks/> */}
    {/* <Redux/> */}
-   {/* <UseContext2/> */}
-   {/* <LiftingState/> */}
-   {/* <TimerComponent/> */}
-   <Javascriptbasic/>
+   <UseContext2/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
