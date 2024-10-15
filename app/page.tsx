@@ -12,6 +12,9 @@ import Hooks from "./components/Hooks";
 import Redux from "./components/Redux";
 import UseContext from "./components/useContext";
 import UseContext2 from "./components/useContext";
+import LiftingState from "./components/LiftingState";
+import TimerComponent from "./components/TimerComponent";
+import Javascriptbasic from "./components/Javascriptbasic";
 type Student = {
   name: string;
   experience: number;
@@ -199,7 +202,10 @@ const Page = () => {
      {/* 0<Light/> */}
      {/* <Hooks/> */}
    {/* <Redux/> */}
-   <UseContext2/>
+   {/* <UseContext2/> */}
+   {/* <LiftingState/> */}
+   {/* <TimerComponent/> */}
+   <Javascriptbasic/>
       {/* <h1>Categorized Students by Experience</h1> */}
       {/* {Object.keys(categorizedStudents).map((experience) => (
         <div key={experience}>
